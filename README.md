@@ -70,18 +70,15 @@ cd search-n-values-by-mr
 
 #### Build Commands
 ```bash
-# Standard compilation
-gcc -fopenmp -O3 -std=c99 -Wall -Wextra search_n_values_by_mr.c -o search_n_values_by_mr
+# Production
+gcc -fopenmp -O3 -march=native -std=c99 -Wall -Wextra search_n_values_by_mr.c -o search_n_values_by_mr
 
-# Debug build
-gcc -fopenmp -O0 -g -std=c99 -Wall -Wextra -DDEBUG search_n_values_by_mr.c -o search_n_values_by_mr_debug
-
-# Optimized build (recommended)
-gcc -O3 -march=native -fopenmp search_n_values_by_mr.c -o search_n_values_by_mr
+# Debug
+gcc -fopenmp -O0 -g -std=c99 -Wall -Wextra -Wpedantic search_n_values_by_mr.c -o search_n_values_by_mr_debug
 ```
 
 ## Usage
-```
+```bash
 ./search_n_values_by_mr <exponent> <target_mr>
 ```
 
